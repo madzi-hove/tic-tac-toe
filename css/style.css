@@ -1,6 +1,8 @@
 :root {
 	--grid-box-size: 150px;
 	--token-size: 90px;
+	/* cross center */
+	--cross-center-point: 39.375px;
 }
 
 * {
@@ -37,4 +39,32 @@ body {
 	inline-size: var(--token-size);
 	border: 0.9375rem solid blue;
 	border-radius: 50%;
+}
+
+.cross {
+	position: relative;
+	block-size: var(--token-size);
+	inline-size: var(--token-size);
+}
+
+.cross::before,
+.cross::after {
+	position: absolute;
+	content: "";
+	background-color: red;
+	transform: rotate(45deg);
+}
+
+.cross::before {
+	block-size: 100%;
+	inline-size: 12.5%;
+	top: 0;
+	left: var(--cross-center-point);
+}
+
+.cross::after {
+	block-size: 12.5%;
+	inline-size: 100%;
+	top: var(--cross-center-point);
+	left: 0;
 }
