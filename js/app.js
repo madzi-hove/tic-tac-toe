@@ -2,12 +2,12 @@ class App {
 	info = document.querySelector(".info");
 	#board = document.querySelector(".grid-container");
 	#grid = new Array(9).fill(null);
-	player = "circle";
 	constructor() {
 		this.displayedInfo = "Circle goes first";
 		this.info.innerText = this.displayedInfo;
 		this.#createBoard();
-		this.#board.addEventListener("click", this.addTokenToBoard);
+		this.#board.addEventListener("click", this.addTokenToBoard.bind(this));
+		this.player = "circle";
 	}
 	#createBoard() {
 		this.#grid.forEach((cell, index) => {
@@ -20,7 +20,9 @@ class App {
 
 	addTokenToBoard(e) {
 		console.log(e.target);
-		e.target.classList.add(this.player);
+		const token = document.createElement("div");
+		token.classList.add(this.player);
+		e.target.append(token);
 	}
 }
 
