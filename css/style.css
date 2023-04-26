@@ -1,5 +1,6 @@
 :root {
 	--grid-box-size: 150px;
+	--token-size: 90px;
 }
 
 * {
@@ -23,7 +24,17 @@ body {
 }
 
 .box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: white;
 	block-size: var(--grid-box-size);
 	inline-size: var(--grid-box-size);
+}
+
+.circle {
+	block-size: var(--token-size);
+	inline-size: var(--token-size);
+	border: 0.9375rem solid blue;
+	border-radius: 50%;
 }
