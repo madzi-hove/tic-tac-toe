@@ -10,11 +10,15 @@
 }
 
 body {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 	align-items: center;
 	min-block-size: 100vh;
+}
+
+.heading {
+	margin: 2rem 0 4.5rem;
 }
 
 .grid-container {
@@ -22,6 +26,7 @@ body {
 	grid-template-columns: repeat(3, 1fr);
 	flex-flow: wrap;
 	background-color: black;
+	margin-bottom: 1rem;
 	gap: 0.5rem;
 }
 
@@ -67,4 +72,19 @@ body {
 	inline-size: 100%;
 	top: var(--cross-center-point);
 	left: 0;
+}
+
+.btn {
+	inline-size: 150px;
+	padding: 0.5rem;
+	margin: 0;
+}
+
+.info {
+	font-size: 2rem;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
 }
